@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hotel_management
 {
-    public partial class Home : Form
+    public partial class ReservationDetails : Form
     {
-        public Home()
+        public ReservationDetails()
         {
             InitializeComponent();
 
@@ -29,20 +29,14 @@ namespace Hotel_management
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
-
-        private void Home_Load(object sender, EventArgs e)
+        private void ReservationDetails_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void Reservation_Btn_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            // Hide home page
-            this.Hide();
 
-            ReservationDetails rd = new ReservationDetails();
-            rd.Closed += (s, args) => this.Close();
-            rd.Show();
         }
     }
 }
