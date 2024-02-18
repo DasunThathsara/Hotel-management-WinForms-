@@ -83,7 +83,6 @@ namespace Hotel_management
             RID_L.Size = new Size(105, 20);
             RID_L.TabIndex = 4;
             RID_L.Text = "Reservation ID";
-            RID_L.Click += label1_Click;
             // 
             // name_L
             // 
@@ -115,16 +114,17 @@ namespace Hotel_management
             // insertBtn
             // 
             insertBtn.Location = new Point(114, 304);
-            insertBtn.Name = "Insert";
+            insertBtn.Name = "insertBtn";
             insertBtn.Size = new Size(152, 50);
             insertBtn.TabIndex = 8;
             insertBtn.Text = "Insert";
             insertBtn.UseVisualStyleBackColor = true;
+            insertBtn.Click += insertBtn_Click;
             // 
             // updateBtn
             // 
             updateBtn.Location = new Point(331, 304);
-            updateBtn.Name = "Update";
+            updateBtn.Name = "updateBtn";
             updateBtn.Size = new Size(152, 50);
             updateBtn.TabIndex = 9;
             updateBtn.Text = "Update";
@@ -133,7 +133,7 @@ namespace Hotel_management
             // deleteBtn
             // 
             deleteBtn.Location = new Point(556, 304);
-            deleteBtn.Name = "Delete";
+            deleteBtn.Name = "deleteBtn";
             deleteBtn.Size = new Size(152, 50);
             deleteBtn.TabIndex = 10;
             deleteBtn.Text = "Delete";
@@ -142,7 +142,7 @@ namespace Hotel_management
             // searchBtn
             // 
             searchBtn.Location = new Point(224, 377);
-            searchBtn.Name = "Search";
+            searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(152, 50);
             searchBtn.TabIndex = 11;
             searchBtn.Text = "Search";
@@ -151,7 +151,7 @@ namespace Hotel_management
             // clearBtn
             // 
             clearBtn.Location = new Point(450, 377);
-            clearBtn.Name = "Clear";
+            clearBtn.Name = "clearBtn";
             clearBtn.Size = new Size(152, 50);
             clearBtn.TabIndex = 12;
             clearBtn.Text = "Clear";

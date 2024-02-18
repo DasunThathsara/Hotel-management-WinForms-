@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*Data provider*/
+using System.Data.SqlClient;
+
 namespace Hotel_management
 {
     public partial class ReservationDetails : Form
@@ -34,9 +37,16 @@ namespace Hotel_management
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void insertBtn_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelM_db;Integrated Security=True;");
+            SqlCommand insert = new SqlCommand("insert into Student values('"
+           + RID.Text + "','" + name.Text + "','" + address.Text + "','" +
+           room.Text + "')", con); con.Open();
+            insert.CommandType = CommandType.Text;
+            insert.ExecuteNonQuery();
+            MessageBox.Show("Data Added Successfully");
+            con.Close();
         }
     }
 }
