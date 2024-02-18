@@ -149,6 +149,7 @@ namespace Hotel_management
             searchBtn.TabIndex = 11;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtn_Click;
             // 
             // clearBtn
             // 
@@ -158,6 +159,7 @@ namespace Hotel_management
             clearBtn.TabIndex = 12;
             clearBtn.Text = "Clear";
             clearBtn.UseVisualStyleBackColor = true;
+            clearBtn.Click += clearBtn_Click;
             // 
             // ReservationDetails
             // 
