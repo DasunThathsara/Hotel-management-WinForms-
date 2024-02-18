@@ -81,7 +81,23 @@ namespace Hotel_management
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelM_db;Integrated Security=True;");
+            SqlCommand search = new SqlCommand("select * from Reservation where id = '" + RID.Text + "'", con);
+           
+            con.Open();
+            SqlDataReader sdr = search.ExecuteReader();
+            if (sdr.Read())
+            {
+                RID.Text = sdr[0].ToString();
+                name.Text = sdr[1].ToString();
+                address.Text = sdr[2].ToString();
+                room.Text = sdr[3].ToString();
+            }
+            else
+            {
+                MessageBox.Show("Data Not Found!");
+            }
+            con.Close();
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
