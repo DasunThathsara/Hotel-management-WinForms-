@@ -66,5 +66,17 @@ namespace Hotel_management
             MessageBox.Show("Data Updated Successfully");
             con.Close();
         }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelM_db;Integrated Security=True;");
+            SqlCommand delete = new SqlCommand("delete from Reservation where id = '" + RID.Text + "'", con); 
+            con.Open();
+            delete.CommandType = CommandType.Text;
+            delete.ExecuteNonQuery();
+            MessageBox.Show("Data Deleted Successfully");
+            con.Close();
+
+        }
     }
 }

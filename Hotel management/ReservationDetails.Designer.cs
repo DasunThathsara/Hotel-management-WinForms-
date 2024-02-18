@@ -98,7 +98,7 @@ namespace Hotel_management
             address_L.AutoSize = true;
             address_L.Location = new Point(142, 180);
             address_L.Name = "address_L";
-            address_L.Size = new Size(107, 20);
+            address_L.Size = new Size(104, 20);
             address_L.TabIndex = 6;
             address_L.Text = "Client Address";
             // 
@@ -139,6 +139,7 @@ namespace Hotel_management
             deleteBtn.TabIndex = 10;
             deleteBtn.Text = "Delete";
             deleteBtn.UseVisualStyleBackColor = true;
+            deleteBtn.Click += deleteBtn_Click;
             // 
             // searchBtn
             // 
