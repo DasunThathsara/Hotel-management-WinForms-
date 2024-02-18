@@ -100,7 +100,7 @@ namespace Hotel_management
             address_L.Name = "address_L";
             address_L.Size = new Size(107, 20);
             address_L.TabIndex = 6;
-            address_L.Text = "CLient Address";
+            address_L.Text = "Client Address";
             // 
             // room_L
             // 
@@ -129,6 +129,7 @@ namespace Hotel_management
             updateBtn.TabIndex = 9;
             updateBtn.Text = "Update";
             updateBtn.UseVisualStyleBackColor = true;
+            updateBtn.Click += updateBtn_Click;
             // 
             // deleteBtn
             // 

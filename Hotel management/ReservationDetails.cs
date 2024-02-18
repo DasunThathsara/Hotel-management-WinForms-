@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 /*Data provider*/
 using System.Data.SqlClient;
+using Microsoft.VisualBasic.Devices;
+using System.Net;
 
 namespace Hotel_management
 {
@@ -40,12 +42,28 @@ namespace Hotel_management
         private void insertBtn_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelM_db;Integrated Security=True;");
-            SqlCommand insert = new SqlCommand("insert into Student values('"
-           + RID.Text + "','" + name.Text + "','" + address.Text + "','" +
-           room.Text + "')", con); con.Open();
+            SqlCommand insert = new SqlCommand("insert into Reservation values('" +
+                RID.Text + "','" + name.Text + "','" +
+                address.Text + "','" +
+                room.Text + "')", con); con.Open();
             insert.CommandType = CommandType.Text;
             insert.ExecuteNonQuery();
             MessageBox.Show("Data Added Successfully");
+            con.Close();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HotelM_db;Integrated Security=True;");
+            SqlCommand update = new SqlCommand("update Reservation set " +
+                "name = '" + name.Text + "'," +
+                "address = '" + address.Text + "', " +
+                "room = '" + room.Text + "' " +
+                "where id = '" + RID.Text + "'", con);
+            con.Open();
+            update.CommandType = CommandType.Text;
+            update.ExecuteNonQuery();
+            MessageBox.Show("Data Updated Successfully");
             con.Close();
         }
     }
